@@ -29,7 +29,7 @@ class Form extends Component {
           Last Name
           <input
             type="text"
-            name="name"
+            name="tag"
             value={this.state.tag}
             onChange={this.handleChange}
           />

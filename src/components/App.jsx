@@ -1,14 +1,14 @@
 import React, {Component} from "react";
-import initialTodos from './todos.json';
+// import initialTodos from './todos.json';
 import Form from "./Form/Form.js";
 
 class App extends Component 
  {
   state = {
-    todos: initialTodos,
+    // todos: initialTodos,
   };
 
-  deleteTodo = todoId => {};
+  // deleteTodo = todoId => {};
 
 
 
