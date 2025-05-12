@@ -1,16 +1,24 @@
-export const App = () => {
-  return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
-    </div>
-  );
+import React, {Component} from "react";
+import initialTodos from './todos.json';
+import Form from "./Form/Form.js";
+
+class App extends Component 
+ {
+  state = {
+    todos: initialTodos,
+  };
+
+  deleteTodo = todoId => {};
+
+
+
+  render (){
+        return (
+<>
+<Form></Form>
+</>
+ ) };
 };
+
+
+export default App;
