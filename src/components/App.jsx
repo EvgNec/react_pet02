@@ -10,12 +10,14 @@ class App extends Component
 
   // deleteTodo = todoId => {};
 
-
+formSubmitHandler = data =>{
+  console.log(data)
+}
 
   render (){
         return (
 <>
-<Form></Form>
+<Form onSubmit={this.formSubmitHandler}></Form>
 </>
  ) };
 };

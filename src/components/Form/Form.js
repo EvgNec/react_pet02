@@ -4,6 +4,7 @@ class Form extends Component {
   state = {
     name: '',
     tag: '',
+    experence: 'junior',
   };
   handleChange = e => {
     const { name, value } = e.currentTarget;
@@ -12,7 +13,14 @@ class Form extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
+    this.props.onSubmit(this.state);
+    this.reset();
   };
+
+  reset = () => {
+    this.setState({ name: '', tag: '' });
+  };
+
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
@@ -34,6 +42,39 @@ class Form extends Component {
             onChange={this.handleChange}
           />
         </label>
+
+        <p>Your level</p>
+        <label>
+          <input
+            type="radio"
+            name="experence"
+            value="junior"
+            onChange={this.handleChange}
+            checked={this.state.experence === 'junior'}
+          />
+          Junior
+        </label>
+        <label>
+          <input
+            type="radio"
+            name="experence"
+            value="middle"
+            onChange={this.handleChange}
+            checked={this.state.experence === 'middle'}
+          />
+          Middle
+        </label>
+        <label>
+          <input
+            type="radio"
+            name="experence"
+            value="senior"
+            onChange={this.handleChange}
+            checked={this.state.experence === 'senior'}
+          />
+          Senior
+        </label>
+
         <button type="submit">Send</button>
       </form>
     );
