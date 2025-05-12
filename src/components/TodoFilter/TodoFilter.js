@@ -1,5 +1,5 @@
 import React from 'react';
-import './TodoFilter.scss';
+// import './TodoFilter.scss';
 
 const TodoFilter = ({ value, onChange }) => (
   <div className="TodoFilter">

@@ -1,9 +1,10 @@
 import React, {Component} from "react";
 import shortid from 'shortid';
 import Form from "./Form/Form.js";
-import TodoList from './components/TodoList';
-import TodoEditor from './components/TodoEditor';
-import Filter from './components/TodoFilter';
+import TodoList from './TodoList';
+import TodoEditor from './TodoEditor';
+import Filter from './TodoFilter';
+import Modal from './Modal';
 
 class App extends Component 
  {
@@ -110,7 +111,19 @@ toggleModal = () => {
     const visibleTodos = this.getVisibleTodos();
         return (
 <>
-<Filter value={filter} onChange={this.changeFilter} />
+
+{showModal && (
+          <Modal onClose={this.toggleModal}>
+            <TodoEditor onSubmit={this.addTodo} />
+          </Modal>
+        )}
+
+       {/* TODO: вынести в отдельный компонент */}
+        <div>
+          <p>Всего заметок: {totalTodoCount}</p>
+          <p>Выполнено: {completedTodoCount}</p>
+        </div> 
+<Filter value={filter} onChange={this.changeFilter} /> 
 
 <TodoList
   todos={visibleTodos}
@@ -118,7 +131,7 @@ toggleModal = () => {
   onToggleCompleted={this.toggleCompleted}
 />
 
-
+<br></br>
 
 <Form onSubmit={this.formSubmitHandler}></Form>
 </>
