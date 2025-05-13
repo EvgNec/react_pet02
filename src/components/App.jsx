@@ -117,7 +117,7 @@ toggleModal = () => {
             <TodoEditor onSubmit={this.addTodo} />
           </Modal>
         )}
-
+        <TodoEditor onSubmit={this.addTodo} />
        {/* TODO: вынести в отдельный компонент */}
         <div>
           <p>Всего заметок: {totalTodoCount}</p>
