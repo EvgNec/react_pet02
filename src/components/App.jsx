@@ -11,7 +11,7 @@ class App extends Component
   state = {
     todos: [],
     filter: '',
-    showModal: false,
+    showModal: true,
   };
 
   // deleteTodo = todoId => {};
@@ -112,12 +112,11 @@ toggleModal = () => {
         return (
 <>
 
-{showModal && (
+ {showModal && (
           <Modal onClose={this.toggleModal}>
             <TodoEditor onSubmit={this.addTodo} />
           </Modal>
-        )}
-        <TodoEditor onSubmit={this.addTodo} />
+          )}
        {/* TODO: вынести в отдельный компонент */}
         <div>
           <p>Всего заметок: {totalTodoCount}</p>
