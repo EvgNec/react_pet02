@@ -112,11 +112,11 @@ toggleModal = () => {
         return (
 <>
 
- {showModal && (
-          <Modal onClose={this.toggleModal}>
+{/* {showModal && (*/}
+         {/* <Modal onClose={this.toggleModal}>*/}
             <TodoEditor onSubmit={this.addTodo} />
-          </Modal>
-          )}
+         {/* </Modal>*/}
+         {/* )}*/}
        {/* TODO: вынести в отдельный компонент */}
         <div>
           <p>Всего заметок: {totalTodoCount}</p>
